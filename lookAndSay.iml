@@ -1,0 +1,72 @@
+package com.company;
+/* Planning:
+Prompt: Look and Say sequence:
+
+                                    1 is read off as "one 1" or 11.
+                                    11 is read off as "two 1s" or 21
+                                    21 is read off as "one 2, then one 1" or 1211
+                                    first six numbers: 1, 11, 21, 1211, 111221, 312211
+
+ - and so on--print out results up until the six one; use a for loop;
+        for (int i = 1; i<=6;i++)
+ - need a counter for the numbers; could set up a thing where it's like it tests if the numbers are similar to each other??
+    because just counting how many 2's and 1's there are won't work.
+ - use count++? for the digit; have to use some sort of conversion from int to string
+ - need some sort of boolean factor i suppose to make the program differenciate from the previous and current number.
+ - case/if and else for if it equals 1? 2 and 3 and so on i mean it's just the first 6 not sure how to do more.
+ - treat it as a string? use a switch statement? count the nubmers as string
+
+
+                                           possible ways to do this maybe:
+ - treat it as a string and make the program read one character at a time through a for loop (so if there's one 2, print 1 etc)
+        *edit: yeah how exactly am I supposed to do that there's this charAt thing but that's for the alphabet
+ - use ints but the problem is if the answer is set to the output then the program recognizes it as a double number, not single digits
+ Ahh
+
+
+ following info is observed from reference: https://stackoverflow.com/questions/39823137/java-count-the-number-of-integers-in-a-string
+
+ - now see here this was what i was talking about the count++ but I didn't know how to format it.
+ - except they have this "boolean isPreviousDigit = false;" which is for more than 6 numbers?
+*/
+
+public class Main {
+    public static void main(String args[]) {
+        int count = 0; //the counter for the amount of 1's, 2's, etc.
+        int zero = 0;
+        int answer;
+        int firstNum = 1; //starting number
+
+        System.out.println("1");
+
+        for (int i = 1; i <= 5; i++) {
+
+            if (firstNum <= 1 && firstNum >= 0) {
+                count++;
+                System.out.print(count);
+                System.out.print("1");
+                answer = ((count * 10) + 1);
+                firstNum = (answer)/10;
+
+            } else if (firstNum >= 1 && firstNum <=3) {
+                count++;
+                System.out.print((count-1)*100 + (1011));//sorry I got Very Stuck
+                answer = ((1211));
+                firstNum = (answer/1000);
+
+
+            } else if (firstNum >= 3 && firstNum <= 4) {
+                count++;
+                System.out.print(count + "3");
+                firstNum = (count + 1)/10;
+
+
+            }
+            System.out.println("");
+
+        }
+    }
+}
+
+//By the way, my intellij's route to GitHub is wonky for some reason, so I'll just copy and paste the core files of older 
+          repositories until I can figure out what's the problem.
